@@ -24,6 +24,7 @@ function eventListeners() {
     subject.addEventListener('blur', validateField);
     message.addEventListener('blur', validateField); // le blur cest quand tu quittes un champs pour aller dans un autre;
     // reset boutoun
+     sendEmailForm.addEventListener('submit', sendEmail);
     resetBtn.addEventListener('click', resetForm);
 }
 
@@ -38,6 +39,21 @@ function eventListeners() {
 function appInit() {
     //disabled the send button onload;
     sendBtn.disabled = true;
+    
+}
+
+//send email
+function sendEmail(e) {
+    e.preventDefault();
+    //show the spiners
+    const spiners = document.querySelector('#spinner');
+    spiners.style.display = 'block';
+    
+    // hide spinners then show the send Email image;
+    setTimeout(function() {
+        // hide the spinners
+        spiners.style.display = "none";
+    }, 3000);
     
 }
 
@@ -57,6 +73,7 @@ function validateField() {
     //check that the input are not empty;
     if(email.value !== '' && subject.value !== '' && message.value !=='' ) {
         if(errors.length === 0 ){
+            //the button should be enable
             sendBtn.disabled = false;
         }
     }
@@ -85,6 +102,7 @@ function  valideEmail(field){
     }
     
  }
+
 
 //reset the form function
 function resetForm() {
