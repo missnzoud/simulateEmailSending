@@ -17,6 +17,10 @@ eventListeners();
 function eventListeners() {
     // App init 
     document.addEventListener('DOMContentloaded', appInit);
+    
+    email.addEventListener('blur', validateField);
+    subject.addEventListener('blur', validateField);
+    message.addEventListener('blur', validateField);
 }
 
 
