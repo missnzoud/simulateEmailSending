@@ -49,11 +49,25 @@ function sendEmail(e) {
     const spiners = document.querySelector('#spinner');
     spiners.style.display = 'block';
     
+    //show the image
+    const sendEmailing = document.createElement('img');
+    sendEmailing.src = 'img/mail.gif';
+    sendEmailing.style.display = 'block';
+    
     // hide spinners then show the send Email image;
     setTimeout(function() {
         // hide the spinners
-        spiners.style.display = "none";
+        spiners.style.display = 'none';
+        document.querySelector('#loaders').appendChild(sendEmailing);
+        
+        setTimeout(function() {
+            sendEmailForm.reset();
+            sendEmailing.remove();
+        }, 5000);
     }, 3000);
+    
+    // show the image
+    document.querySelector('loaders');
     
 }
 
