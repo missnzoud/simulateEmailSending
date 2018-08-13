@@ -3,7 +3,9 @@
 const sendBtn = document.querySelector('sendBtn'),
       email = document.getElementById('email'),
       subject = document.getElementById('subject'),
-      message = document.getElementById('message');
+      message = document.getElementById('message'),
+      resetBtn = document.getElementById('resetBtn'),
+      sendEmailForm = document.getElementById('email-form');
 
 
 
@@ -21,6 +23,8 @@ function eventListeners() {
     email.addEventListener('blur', validateField);
     subject.addEventListener('blur', validateField);
     message.addEventListener('blur', validateField); // le blur cest quand tu quittes un champs pour aller dans un autre;
+    // reset boutoun
+    resetBtn.addEventListener('click', resetForm);
 }
 
 
@@ -81,4 +85,9 @@ function  valideEmail(field){
     }
     
  }
+
+//reset the form function
+function resetForm() {
+    sendEmailForm.reset();
+}
 
