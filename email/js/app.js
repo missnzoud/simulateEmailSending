@@ -17,7 +17,7 @@ eventListeners();
 function eventListeners() {
     // App init 
     document.addEventListener('DOMContentloaded', appInit);
-    
+    // validate the forms
     email.addEventListener('blur', validateField);
     subject.addEventListener('blur', validateField);
     message.addEventListener('blur', validateField);
@@ -35,4 +35,8 @@ function appInit() {
     //disabled the send button onload;
     sendBtn.disabled = true;
     
+}
+
+function validateField() {
+    console.log('the validate Field');
 }
