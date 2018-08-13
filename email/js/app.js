@@ -42,6 +42,12 @@ function validateField() {
     let errors;
     //validate the length of the field;
     validateLength(this);
+    
+    //validate the email
+           //console.log(this);
+    if(this.type === 'email') {
+        valideEmail(this);
+    }
 }
 //validate the length of the field
 function validateLength(field){
@@ -54,3 +60,17 @@ function validateLength(field){
     }
     
 }
+//validate email(check for @ in the value);
+function  valideEmail(field){
+    let emailText = field.value;
+    //check if the emailtext containt the validate field 
+    if(emailText.indexOf('@') !== -1 ) {
+         field.style.borderBottomColor = 'green';
+         field.classList.remove('error');
+    }else{
+        field.style.borderBottomColor = 'red';
+        field.classList.add('error');
+    }
+    
+ }
+
