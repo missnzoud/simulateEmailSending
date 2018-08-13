@@ -1,6 +1,9 @@
 //variables
 
-const sendBtn = document.querySelector('sendBtn');
+const sendBtn = document.querySelector('sendBtn'),
+      email = document.getElementById('email'),
+      subject = document.getElementById('subject'),
+      message = document.getElementById('message');
 
 
 
