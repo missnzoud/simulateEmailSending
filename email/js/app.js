@@ -17,10 +17,10 @@ eventListeners();
 function eventListeners() {
     // App init 
     document.addEventListener('DOMContentloaded', appInit);
-    // validate the forms
+    // validate the field
     email.addEventListener('blur', validateField);
     subject.addEventListener('blur', validateField);
-    message.addEventListener('blur', validateField);
+    message.addEventListener('blur', validateField); // le blur cest quand tu quittes un champs pour aller dans un autre;
 }
 
 
@@ -38,5 +38,19 @@ function appInit() {
 }
 
 function validateField() {
-    console.log('the validate Field');
+   // console.log('the validate Field');
+    let errors;
+    //validate the length of the field;
+    validateLength(this);
+}
+//validate the length of the field
+function validateLength(field){
+    if(field.value.length > 0 ){
+        field.style.borderBottomColor = 'green';
+        field.classList.remove('error');
+    }else{
+        field.style.borderBottomColor = 'red';
+        field.classList.add('error');
+    }
+    
 }
